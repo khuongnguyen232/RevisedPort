@@ -1,5 +1,5 @@
 .header {
-  height:95vh;
+  height:90vh;
   background-image:linear-gradient(to right, rgba($color-gray-light,.8),rgba($color-gray-dark,.8)) , url(../img/code-header.jpg);
   background-size: cover;
   background-position: top;
@@ -35,7 +35,9 @@
     animation: moveInLeft 1s ease-out;
 
     @include respond(tab-port) {
-      font-size: 5rem;
+      font-size: 4.5rem;
+      letter-spacing: 2rem;
+      font-weight: 300;
     }
   }
 
@@ -46,5 +48,10 @@
     animation-name: moveInRight;
     animation-duration: 1s;
     animation: moveInRight 1s ease-out;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+      letter-spacing: .5rem;
+    }
   }
 }
