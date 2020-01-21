@@ -302,7 +302,7 @@ body {
 
 .footer {
   padding-top: 4rem;
-  height: 30vh;
+  height: auto;
   background-color: #000;
   color: #FFF;
   position: relative; }
