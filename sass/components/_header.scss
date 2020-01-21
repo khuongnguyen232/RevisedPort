@@ -1,0 +1,50 @@
+.header {
+  height:95vh;
+  background-image:linear-gradient(to right, rgba($color-gray-light,.8),rgba($color-gray-dark,.8)) , url(../img/code-header.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 0 75vh );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh );
+
+  @include respond(tab-port) {
+    -webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 0 80vh );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80vh );
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 0 85vh );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85vh );
+  }
+
+  &__text-box {
+    position: absolute;
+    text-align: center;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    color: $color-white;
+    text-transform: uppercase;
+  }
+
+  &__primary-text {
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    animation: moveInLeft 1s ease-out;
+
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
+  }
+
+  &__sub-text {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    font-weight: 200;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation: moveInRight 1s ease-out;
+  }
+}

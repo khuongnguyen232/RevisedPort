@@ -1,0 +1,174 @@
+.project-section {
+  padding-top:10rem;
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &__side {
+    height:52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      &--1{
+        background-image: linear-gradient(to bottom right,$color-orange-light,$color-orange-dark);
+      }
+      &--2{
+        background-image: linear-gradient(to bottom right,$color-red-light,$color-red-dark);
+      }
+      &--3{
+        background-image: linear-gradient(to bottom right,$color-gray-light,$color-gray-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front{
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back{
+    transform: rotateY(0);
+  }
+
+  //Front side styling
+  &__image {
+    height: 23rem;
+    background-size:cover;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &--1 {
+      background-image: linear-gradient(to bottom right, $color-gray-light,$color-gray-dark),url(../img/beerbank.png);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to bottom right, $color-gray-light,$color-gray-dark),url(../img/youtube.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(to bottom right, $color-gray-light,$color-gray-dark),url(../img/League.png);
+    }
+  }
+
+  &__heading {
+    position:absolute;
+    text-align:right;
+    width: 50%;
+    top:11rem;
+    right:3rem;
+
+    &-text {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      color:$color-white;
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      font-weight: 400;
+      padding: 1rem 1.5rem;
+
+      &--1 {
+        background-image: linear-gradient(to bottom right, $color-orange-light, $color-orange-dark);
+      }
+
+      &--2 {
+       background-image: linear-gradient(to bottom right, $color-red-light, $color-red-dark);
+      }
+
+      &--3{
+      background-image: linear-gradient(to bottom right, $color-gray-light, $color-gray-dark);
+      }
+    }
+  }
+
+  &__text {
+    color:$color-gray-dark;
+    padding:0 2rem 0 2rem;
+    font-size: 2rem;
+  }
+
+  &__link {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &__btn {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color:$color-gray-dark;
+    margin:2rem 0;
+    padding: 1rem 1rem;
+    background-color: $color-white;
+
+    border-radius: 10rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 100;
+
+    transition: all .4s;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $color-black;
+    }
+  }
+
+  //HANDLE tablet / phone
+  @media only screen and (max-width: 56.25em),only screen and (hover: none){
+    display: block;
+    margin:0 auto;
+    margin-bottom: 5rem;
+    width: 75%;
+    height:auto;
+    position: relative;
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--front {
+        overflow: auto;
+        max-height: 40rem;
+      }
+
+      &--back {
+        height: 20rem;
+        transform: rotateY(0);
+      }
+
+      &__text {
+        position: relative;
+        padding:0 1.5rem 0 1.5rem;
+        font-size: 50%;
+      }
+    }
+
+    &:hover &__side--front{
+      transform: rotateY(0);
+    }
+  }
+}

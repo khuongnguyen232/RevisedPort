@@ -1,0 +1,58 @@
+.contact {
+  margin-top: 8rem;
+  padding-top: 15rem;
+  height: auto;
+  -webkit-clip-path:polygon(0 0, 100% 25vh, 100% 100%, 0 100% );
+  clip-path: polygon(0 0, 100% 25vh, 100% 100%, 0 100% );
+  background-image: linear-gradient(to bottom right, rgba($color-gray-light,.8),rgba($color-gray-dark,.8));
+
+  position: relative;
+
+
+  @include respond(tab-land) {
+    -webkit-clip-path:polygon(0 0, 100% 20vh, 100% 100%, 0 100% );
+    clip-path: polygon(0 0, 100% 20vh, 100% 100%, 0 100% );
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path:polygon(0 0, 100% 15vh, 100% 100%, 0 100% );
+    clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100% );
+  }
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    @include respond(phone) {
+      padding-top: 15%;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 2rem;
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    font-size: 2rem;
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
+
+    &--email {
+    }
+
+    &--phone {
+    }
+  }
+}
