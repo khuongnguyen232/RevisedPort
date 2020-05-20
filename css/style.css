@@ -196,7 +196,7 @@ body {
     .card__image--2 {
       background-image: linear-gradient(to bottom right, #eee, #777), url(../img/youtube.jpg); }
     .card__image--3 {
-      background-image: linear-gradient(to bottom right, #eee, #777), url(../img/League.png); }
+      background-image: linear-gradient(to bottom right, #eee, #777), url(../img/trivia.png); }
   .card__heading {
     position: absolute;
     text-align: right;
